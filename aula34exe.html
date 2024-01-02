@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" method="get" action="">
+        <p>Nome: <input type="text" id="nome" ></p>
+        <p>Sobrenome: <input type="text" id="sobrenome"></p>
+        <p>Peso: <input type="text" id="peso"></p>
+        <p>Altura: <input type="text" id="altura"></p>
+        <button >Enviar</button>
+    </form>
+
+        <p id="print"></p>   
+    <script>
+        let print = document.querySelector('#print')
+        function registro(){
+            const form = document.querySelector('.form')
+            const print = document.querySelector('#print')
+
+            const pessoa = []
+            
+            form.addEventListener('submit',recebeEventoForm)
+            
+            function recebeEventoForm(evento){
+                evento.preventDefault();
+
+                const nome = form.querySelector('#nome');
+                const sobrenome = form.querySelector('#sobrenome');
+                const peso = form.querySelector('#peso');
+                const altura = form.querySelector('#altura');
+                
+                console.log(nome.value,sobrenome.value,peso, altura);
+                
+                pessoa.push({
+                    nome: nome.value,
+                    sobrenome: sobrenome.value,
+                    peso: peso.value,
+                    altura:altura.value
+                })
+
+                print.innerHTML += `Nome: ${nome.value} Sobrenome:${sobrenome.value} Peso:${peso.value} Altura:${altura.value}</br>`
+                nome.value=''
+                sobrenome.value=''
+                peso.value=''
+                altura.value=''
+         
+            }         
+            
+        }
+        registro()
+
+    </script>
+</body>
+</html>

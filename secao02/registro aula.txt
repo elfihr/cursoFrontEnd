@@ -1,0 +1,88 @@
+indexOf('a') >> procura o primeira letra a
+	ex: nome = Juliana
+		Entrada: nome.value.indexOf(a) 
+		saida: 5(posição)
+		Erros:algumas situações nao é nescessario value
+		quando nescssario o erro ocorre Uncaught TypeError: variavel.indexOf is not a function
+-----------------------------------------------------
+lastIndexOf() >>mesma forma de cima so que busca a ultima letra
+-----------------------------------------------------
+slice(-3, variavel.length) >> pega as ultimas 3 letras do nome
+	Entrada: variavel.value.slice(-3, nome.length)
+	Erros:algumas situações nao é nescessario value
+		quando nescssario o erro ocorre Uncaught TypeError: variavel.indexOf is not a function
+-----------------------------------------------------
+toLowerCase() e toUpperCase() >> todas letras minusculas ou maisculas
+	ex: nome = Reinaldo
+		Entrada:nome.value.toUpperCase()
+		Saida:REINALDO
+-----------------------------------------------------
+typeof >> usado para verificar o tipo primitivo
+	ex: typeof variavel
+-----------------------------------------------------
+toString() >> converte algo para string
+	ex: letra = n1.toString()
+	-----------------------------------------------------
+toFixed() >> arredonda um numero
+	ex: n = 1.3635357
+		Entrada: n.tofixed(2)
+		saida:  1.36
+-----------------------------------------------------
+isInteger >> retorna numero inteiro
+	ex: n = 1.34
+		Entrada: Number.isInteger(n)
+		Saida: False
+		Pode ser usado como:
+			-Number.isNaN(n) >> se ele nao for um numero retorna TRUE
+-----------------------------------------------------
+ParseFloat >> usado para numeros flutuantes e pode ser usado com toFixed
+	ex:n = 3.14532134
+	   Entrada: n1 = parseFloat(n.toFixed(2))
+	   Saida: 3.14
+-----------------------------------------------------
+---------------------ARRAY---------------------------
+-----------------------------------------------------
+Localizar objetos na Array
+	ex: const aluno = ['pablo' , 'leto']
+		Entrada: console.log[0]
+		Saida: pablo
+-----------------------------------------------------
+Editar um objeto na Array ou acrescentar/adicionar(nao recomendado)
+	ex: const aluno = ['pablo' , 'leto']
+		Entrada: aluno[1] = 'Ricard'
+		Saida: console.log(alunos) >> 'pablo' , 'Ricard'
+-----------------------------------------------------
+Array.Push() >> adiciona elemento no fim da ARRAY
+	ex: const aluno = ['pablo' , 'leto']
+		Entrada: aluno.push('marcos')
+		Saida: aluno = ['pablo' , 'leto', 'marcos']
+-----------------------------------------------------
+umaArray.unshift() >> adiciona um obeto na primeira posição da ARRAY
+	ex: const aluno = ['pablo' , 'leto']
+		Entrada: aluno.unshift('marcos')
+		Saida: aluno = ['marcos' , 'pablo' , 'leto']
+-----------------------------------------------------
+outraArray.pop()  >> remover um elemento
+	ex1: const aluno = ['pablo' , 'leto']
+		 Entrada aluno.pop()
+		 Saida: aluno = ['pablo']
+	removendo em salvando em outra variavel
+	ex2: 
+		 Entrada let removido = aluno.pop('leto')
+		 Saida: aluno = ['pablo']
+				removido = 'leto'
+-----------------------------------------------------
+Array.shift() >> remove o primeiro do indice
+	Similar ao pop e pode ser usado da mesma forma
+-----------------------------------------------------
+delete array[1] >> ira remover o objeto no indice 1 e deixar o espaço vago , ficara undefined
+-----------------------------------------------------
+umaArray.Slice() >> imprime o conjunto de indice selecionado
+	ex: aluno = ['marcos' , 'pablo' , 'leto']
+		Entrada: aluno.slice(0,1)
+		Saida:['marcos' , 'pablo']
+-----------------------------------------------------
+instaceof Array >> verifica se for uma ARRAy
+	ex: aluno = ['marcos' , 'pablo' , 'leto']
+		Entrada: alunos instaceof Array
+		Saida: TRUE

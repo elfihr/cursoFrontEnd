@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite seu nome<input type="text" id="nome"></p>
+    <input type="button" value="Validar" onclick="validar()">
+    <p id="saida"></p>
+    <script>
+        let nome = document.getElementById('nome')
+        let saida = document.getElementById('saida')
+
+        function validar(){
+           
+
+
+            let tot = nome.value.length
+            saida.innerHTML =''
+            saida.innerHTML += `<p>seu nome é ${nome.value}</p>` 
+            saida.innerHTML += `<p>quantidade de caracteres é ${tot}</p>` 
+            saida.innerHTML += `<p>segundo caracter ${nome.value[1]}</p>` 
+            saida.innerHTML += `<p>primeiro indice letra a ${nome.value.indexOf('a')}</p>`
+            saida.innerHTML += `<p>ultimo indiceletra a ${nome.value.lastIndexOf('a')}</p>`
+            saida.innerHTML += `<p>ultimas 3 letras ${nome.value.slice(-3, nome.length)}</p>`
+            saida.innerHTML += `<p>as palavras do seu nome sao ${nome.value.split(' ')}</p>` //separa virgulas
+            saida.innerHTML += `<p>seu nome é minusculo ${nome.value.toLowerCase()}</p>` 
+            saida.innerHTML += `<p>seu nome é maisculo ${nome.value.toUpperCase()}</p>` 
+            
+        
+
+        }
+            
+        
+        
+
+    </script>
+</body>
+</html>
