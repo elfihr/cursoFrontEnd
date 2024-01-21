@@ -86,3 +86,78 @@ instaceof Array >> verifica se for uma ARRAy
 	ex: aluno = ['marcos' , 'pablo' , 'leto']
 		Entrada: alunos instaceof Array
 		Saida: TRUE
+		
+-----------------------------------------------------
+---------------------FUNCAO---------------------------
+-----------------------------------------------------
+FuncaoSimples
+	ex01:
+	Entrada: function saudacao(nome){
+				console.log(`Bom dia ${nome}`);
+			}
+	Saida: saudacao('Luiz');
+	
+	ex02:
+	Entrada:function saudacao(nome){
+				return `Bom dia ${nome}`;
+			}
+
+			console.log(saudacao('Luiz'))
+	Saida:Bom dia Luiz
+-----------------------------------------------------
+FunçãoCalculo
+	ex:
+	Entrada: function soma(x,y){
+				const resultado = x + y
+				return resultado;
+	}
+			console.log(soma(4,2))
+	Saida:  6
+-----------------------------------------------------			
+ArrowFunction
+	Entrada:const potencia = n =>  n * n;
+			
+			console.log(potencia(3))
+	Saida: 9
+-----------------------------------------------------
+---------------------Objeto---------------------------
+-----------------------------------------------------
+Entrada: function criaPessoa(nome,idade){
+			return {nome,idade}				
+			}
+
+			const pessoa1 = criaPessoa('Jose',21)
+			const pessoa2 = criaPessoa('Lucas',44)
+
+			console.log(pessoa1)
+			console.log(pessoa2.nome)
+			
+Saida:{ nome: 'Jose', idade: 21 }
+	   Lucas
+-----------------------------------------------------
+---------------ReerenciaeCopias----------------------
+-----------------------------------------------------
+//Tipos primitivos sao copiados enquando ARRAYS,OBETOS E FUNÇÕES  sao passados por referencia
+
+Entrada:let a = 1
+		let b = a
+
+		b += 1
+
+		console.log("a =",a," b =",b)
+
+		let c = [1 ,2 ,3]
+		let d = c
+
+		c.pop()
+		console.log("arreyC =",c,"arreyD =",d)
+
+		//como copiar as referencias
+
+		let e = [...c]
+		e.push(4)
+		console.log("arreyC =",c," arrayE =",e)
+
+Saida:a = 1  b = 2
+	  arreyC = [ 1, 2 ] arreyD = [ 1, 2 ]
+	  arreyC = [ 1, 2 ]  arrayE = [ 1, 2, 4 ]

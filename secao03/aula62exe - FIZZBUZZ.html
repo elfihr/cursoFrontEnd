@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula62</title>
+
+</head>
+<body>
+    <p>Digite um Numero: <input type="number" id="num01"></p>
+    <button id="calc">Calcula</button>
+    <p id="print"></p>
+
+    <script>
+        const num01input = document.querySelector('#num01')
+        const calc = document.querySelector('#calc')
+        const print = document.querySelector('#print')
+
+        function imprimir(p){
+            return print.innerHTML += `${p}`
+        }
+        
+        calc.addEventListener('click', ()  => {
+            num01 = Number(num01input.value)
+
+            print.innerHTML = ' '
+
+            function fizzBuzz(n){
+                
+                if(n % 3 === 0 && n % 5 === 0) return imprimir('FIZZBUZZ');
+                if (n % 3 === 0) return imprimir('FIZZ');
+                if (n % 5 === 0) return imprimir('BUZZ');
+                
+                else{
+                    return imprimir(n)
+                }
+            }
+           
+            fizzBuzz(num01)
+            
+            num01input.value = ''
+            num01input.focus()
+             
+            
+        })
+    </script>
+
+</body>
+</html>

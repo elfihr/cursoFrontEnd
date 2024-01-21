@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./modelos/modelo/assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <h1>Lorem ipsum dolor sit amet</h1>
+
+        <div class="paragrafo">
+            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nihil porro culpa similique </P>
+            <p>explicabo impedit ratione voluptas officia excepturi perferendis, doloremque, ipsam voluptate</p>
+            <p> eaque perspiciatis aut consequatur laudantium iusto tempora!</p>
+            <p>oluptas officia excepturi perferendis, doloremque, ipsam voluptate</p>
+        </div>   
+    </section>
+
+    <script>
+
+        const paragrafo = document.querySelector('.paragrafo')
+        const ps = paragrafo.querySelectorAll('p')
+
+        //pega estilo CSS
+        const styleBody = getComputedStyle(document.body)
+        const backgroundColorBody = styleBody.backgroundColor;
+
+        for(let p of ps){
+            p.style.backgroundColor = backgroundColorBody
+        }
+
+        // for(let p of ps){
+        //     p.style.backgroundColor = "red"
+        // }
+    </script>
+  
+    
+
+</body>
+</html>

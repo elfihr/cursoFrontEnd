@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>CaluladoraIMC</title>
+</head>
+<body>
+    <main>
+
+
+        <p id="print"></p>
+        
+    </main>
+    <script>
+        const print = document.querySelector('#print')
+
+        function imprimir(p) {
+            return print.innerHTML += `${p}</br>`
+            }
+            
+        
+        const date = new Date()
+        print.innerHTML = date.toLocaleDateString('pt-BR', {dateStyle : 'full', timeStyle: 'full'});
+
+    </script>
+</body>
+</html>

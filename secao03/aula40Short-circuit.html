@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>short-Circuit</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 200px;
+            
+        }
+        
+        .back button{
+            border: none;
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: rgb(211, 211, 211);
+        }
+
+        .back button:hover{
+            background-color: rgb(251, 251, 251)
+        }
+
+        .back button:active{
+            transform: scale(0.9);
+        }
+
+        .back{
+            width: 200px;
+            height: 150px;
+            background-color: burlywood;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-shadow:4px 4px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <h3>São que Horas?</h3>
+        <button onclick="iniciar()">Iniciar</button>
+        <p id="print"></p>  
+    </div>
+    
+    
+    <script>
+
+        let print = document.querySelector('#print')
+        let data = new Date()
+        let hora = data.getHours()
+        let minuto = data.getMinutes()
+
+
+        function iniciar(){
+            print.innerHTML  = ''
+            if(hora >= 0 && hora <= 11){
+                print.innerHTML += `Bom dia, agora são` 
+            }else if(hora >= 12 && hora <= 17){
+                print.innerHTML += `Boa tarde, agora são` 
+            }else if(hora >= 18 && hora <= 23){
+                print.innerHTML += `Boa Noite, agora são` 
+            }
+            
+            print.innerHTML  += ` ${hora}:${minuto}`  
+        }
+        
+
+    </script>
+</body>
+</html>

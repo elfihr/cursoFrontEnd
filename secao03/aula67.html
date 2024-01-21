@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Tarefas</title>
+</head>
+<body>
+    <main>
+        <h2>Lista de Tarefas</h2>
+        
+
+        
+        <div class="input">
+            
+            <p><input type="text" id="inputtarefa"><button id="btn-adicionar" title="Adiciona uma Tarefa">Adicionar Tarefa</button></p>
+        </div>
+
+        <p id="tarefa" ></p>
+        
+    </main>
+    <script>
+        const inputTarefa = document.querySelector('#inputtarefa')
+        const btnAdicionar = document.querySelector('#btn-adicionar')
+        const tarefa = document.querySelector('#tarefa')
+
+        function limpaTela(){
+            inputTarefa.value =''
+            inputTarefa.focus()
+        }
+
+        //================EstruturaListaTarefa=============
+        function criaLi(){
+            const li = document.createElement('li')
+            return li           
+        }
+       
+        //"li"  vem da função cria li
+        function criaButton(li){
+            li.innerText += '';
+            const btnApagar = document.createElement('button')
+            btnApagar.innerText = 'Apagar'
+            btnApagar.setAttribute('class','apagar')
+            btnApagar.setAttribute('title','apagar essa tarefa')
+            li.appendChild(btnApagar)
+        }
+
+        function criaTarefa(text){
+            const li = criaLi()
+            li.innerText = text
+            tarefa.appendChild(li)
+            limpaTela()
+            criaButton(li)
+            salvaTarefas()
+        }
+
+        function salvaTarefas(){
+            const liTarefa = tarefa.querySelectorAll('li')
+            const listaTarefas = []
+
+            for(let t of liTarefa){
+                let tarefaTexto = t.innerText;
+                tarefaTexto = tarefaTexto.replace('Apagar', '')
+                listaTarefas.push(tarefaTexto)
+            }
+
+            const tarefasJSON = JSON.stringify(listaTarefas)
+            localStorage.setItem('tarefa',tarefasJSON)
+            
+        }
+        //================EstruturaListaTarefaFIm=============
+
+        
+        //================AddTarefa=============
+        btnAdicionar.addEventListener('click', () => {
+            if(!inputTarefa.value) return
+            criaTarefa(inputTarefa.value)
+        })
+
+        inputTarefa.addEventListener('keypress', (e) =>{
+            
+            if(e.keyCode === 13){
+                if(!inputTarefa.value) return
+            criaTarefa(inputTarefa.value)
+            }
+        })
+
+        //================AddTarefaFim=============
+
+        document.addEventListener('click', function (e){
+            const elemento = e.target
+            if(elemento.classList.contains('apagar')){
+                elemento.parentElement.remove()
+                salvaTarefas()
+            }
+        
+        })
+
+         //================LerJSON=============
+
+         function addTarefaSalva(){
+            const tarefas = localStorage.getItem('tarefa')
+            const listaDeTarefa = JSON.parse(tarefas)
+
+            for(let t of listaDeTarefa){
+                criaTarefa(t)
+            }
+         }
+
+         addTarefaSalva()
+
+
+    </script>
+</body>
+</html>

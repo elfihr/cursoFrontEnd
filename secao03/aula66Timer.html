@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Temporizador</title>
+</head>
+<body>
+    <main>
+        <h2>Timer</h2>
+        <p id="clock">00:00:00</p>
+        
+        <div class="input">
+            <button class="botao" id="inicia">Iniciar</button>
+            <button class="botao" id="pausa">Pausa</button>
+            <button class="botao" id="zera">Zera</button>
+        </div>
+      
+    </main>
+    <script>
+        const print = document.querySelector('#clock')
+        const inicia = document.querySelector('#inicia')
+        const pausa = document.querySelector('#pausa')
+        const zera = document.querySelector('#zera')
+
+        let segundo = 0;
+        let timer;
+
+        //============Funções============
+        function formataHora(){
+            const data = new Date(segundo * 1000)
+            return data.toLocaleTimeString('pt-BR',{ hour12:false,timeZone:'GMT'})
+        }        
+
+        function startClock(){
+            timer = setInterval(function(){
+                segundo++;
+                print.innerHTML = formataHora(segundo)
+            },1000)
+        }
+         //============FIM============
+
+        inicia.addEventListener('click',()=>{
+            clearInterval(timer) //zera o temporizador
+            startClock()
+        })
+        pausa.addEventListener('click',()=>{
+            clearInterval(timer)
+        })
+        zera.addEventListener('click',()=>{
+            clearInterval(timer)
+            print.innerHTML = '00:00:00'
+            segundo = 0
+        })
+
+
+    </script>
+</body>
+</html>

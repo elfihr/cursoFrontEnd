@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Numero 01: <input type="number" id="num01"></p>
+    <p>Numero 02: <input type="number" id="num02"></p>
+    <button id="calc">Calcula</button>
+    <p id="print"></p>
+
+    <script>
+        const num01input = document.querySelector('#num01')
+        const num02input = document.querySelector('#num02')
+        const calc = document.querySelector('#calc')
+        const print = document.querySelector('#print')
+        
+        calc.addEventListener('click', ()  => {
+            num01 = Number(num01input.value)
+            num02 = Number(num02input.value)
+            
+            function ePaisagem(x,y){
+                return x > y ? x : y;
+            }
+
+            print.innerHTML = `O maior numero digitado foi ${ePaisagem(num01,num02)}` 
+            
+        })
+    </script>
+
+</body>
+</html>
