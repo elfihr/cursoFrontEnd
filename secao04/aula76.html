@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    background: #43766C;
+
+
+}
+
+main{
+    padding: 1rem 0;
+    text-align: center;
+    background: #DED0B6;
+    border: 3px solid #B2A59B;
+    border-radius: 6px;
+    width: 30rem;
+    box-shadow: 4px 4px 4px rgba(0,0,0,.5);
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 5px 4px rgba(0,0,0,.25);
+}
+
+.calculadora{
+    width: 400px;
+}
+
+.display{
+    font-size: 2em;
+    width: 100%;
+    text-align: right;
+}
+
+.btn{
+    width: 100%;
+    height: 40px;
+    font-size: 1em;
+    border: none;
+    background-color: #d3d2d1;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #a5a19c;
+}
+
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Calculadora</h1>
+        <table class="calculadora">
+            <tr>
+                <td colspan="4"><input type="text" class="display"></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-clear">C</button></td>
+                <td><button class="btn btn-num">(</button></td>
+                <td><button class="btn btn-num">)</button></td>
+                <td><button class="btn btn-num">/</button></td>
+            </tr>
+
+            <tr>
+                <td><button class="btn btn-num">7</button></td>
+                <td><button class="btn btn-num">8</button></td>
+                <td><button class="btn btn-num">9</button></td>
+                <td><button class="btn btn-num">*</button></td>
+            </tr>
+
+            <tr>
+                <td><button class="btn btn-num">4</button></td>
+                <td><button class="btn btn-num">5</button></td>
+                <td><button class="btn btn-num">6</button></td>
+                <td><button class="btn btn-num">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-num">1</button></td>
+                <td><button class="btn btn-num">2</button></td>
+                <td><button class="btn btn-num">3</button></td>
+                <td><button class="btn btn-num">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-num">.</button></td>
+                <td><button class="btn btn-num">0</button></td>
+                <td><button class="btn btn-del">&laquo;</button></td>
+                <td><button class="btn btn-equal">=</button></td>
+            </tr>
+        </table>
+    </section>
+
+    <script>
+        function criaCalculadora(){
+            return{
+                display : document.querySelector('.display'),
+
+                clearDisplay(){
+                    this.display.value = ''
+                },
+
+                realizaConta(){
+                    let conta = this.display.value;
+
+                    try{
+                        conta = eval(conta);
+                        if(!conta){
+                            alert('Conta invalida')
+                            return
+                        }
+                        this.display.value=String(conta)
+                    }catch(e){
+                        alert('Conta invalida')
+                            return
+                    }
+                },
+
+                inicia(){
+                    this.cliqueBotoes();                
+                },
+
+                apagaUm(){
+                    this.display.value = this.display.value.slice(0,-1)//tamanho da string -1
+                },
+
+                cliqueBotoes(){
+                    document.addEventListener('click', function(e) {
+                        const el = e.target;
+
+                        if(el.classList.contains('btn-num')){
+                            this.btnParaDisplay(el.innerText);
+                        }
+
+                        if(el.classList.contains('btn-clear')){
+                            this.clearDisplay()
+                        }
+
+                        if(el.classList.contains('btn-del')){
+                            this.apagaUm()
+                        }
+
+                        if(el.classList.contains('btn-equal')){
+                            this.realizaConta()
+                        }
+
+
+
+
+                    }.bind(this))
+                },
+
+                btnParaDisplay(valor){
+                    this.display.value += valor;
+                }
+
+            }
+        }
+
+        const calculadora = criaCalculadora();
+        calculadora.inicia()
+    </script>
+</body>
+</html>

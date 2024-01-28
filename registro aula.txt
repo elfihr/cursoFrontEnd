@@ -120,6 +120,16 @@ ArrowFunction
 			console.log(potencia(3))
 	Saida: 9
 -----------------------------------------------------
+	Entrada:const SouDado = function(){
+				console.log('Ola mundo')
+			}
+	
+			SouDado()
+	
+	Saida: Ola Mundo
+
+
+-----------------------------------------------------
 ---------------------Objeto---------------------------
 -----------------------------------------------------
 Entrada: function criaPessoa(nome,idade){
