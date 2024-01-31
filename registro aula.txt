@@ -86,7 +86,44 @@ instaceof Array >> verifica se for uma ARRAy
 	ex: aluno = ['marcos' , 'pablo' , 'leto']
 		Entrada: alunos instaceof Array
 		Saida: TRUE
-		
+-----------------------------------------------------
+Split >> seprar um objeto/string em uma array
+	ex:
+	Entrada:const num = 'um,dois, tres, quatro'
+			const numeros = num.split(',')   //condição para separar
+			console.log(numeros)
+	Saida:[ 'um', 'dois', ' tres', ' quatro' ]
+-----------------------------------------------------
+Join >> junto array na string
+	ex:
+	Entrada:const num = [ 'um', 'dois', ' tres', ' quatro' ]
+			const numeros = num.join(',')
+			console.log(numeros)
+	Saida:'um,dois, tres, quatro'
+-----------------------------------------------------
+Splice >> remove, adiciona,etc
+	ex:
+	Entrada:const nomes = ['marco','maria','manoel','maquito','jorge']
+			const remove = nomes.splice(2,3) <<mantem 2 remove 3.Em vez de 3 usar Number.MAX_VALUE
+			console.log(nomes,remove)
+	Saida:[ 'marco', 'maria' ] [ 'manoel', 'maquito', 'jorge' ]
+
+	Entrada:const remove = nomes.splice(-1,1) << do ultimo elemento, remove 1
+	Entrada:const remove = nomes.splice(0,1) << do primeiro elemento, remove 1
+	Entrada:const remove = nomes.splice(0,1, 'marquinos') << adiciona um elemento no final da Array
+-----------------------------------------------------
+Concatenando
+	ex:
+	Entrada:const a1 = [1,2,3]
+			const a2= [4,5,6]
+			const a3 = [...a1,...a2,...[10,11]]
+			console.log(a3)
+	Saida:[
+  1, 2,  3,  4,
+  5, 6, 10, 11
+]
+
+
 -----------------------------------------------------
 ---------------------FUNCAO---------------------------
 -----------------------------------------------------
