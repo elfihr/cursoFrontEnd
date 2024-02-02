@@ -4,4 +4,4 @@ const total = num.reduce(function(tot,valor){
     tot +=valor
     return tot
 },0)
-console.log(total)
+console.log(total) 
