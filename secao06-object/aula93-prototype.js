@@ -2,7 +2,7 @@
 
 function Pessoa(nome,idade){
     this.nome = nome,
-    this.idade = idade,
+    this.idade = idade
     //this.completeName = () => this.nome + ' '+this.idade
 }
 
