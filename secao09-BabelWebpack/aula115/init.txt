@@ -1,0 +1,12 @@
+=====CONSOLE=====
+>>Inicio packahe.json
+npm init -y
+
+>>Inico Babel+webpack
+npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader webpack webpack-cli regenerator-runtime core-js@2
+
+====Pastas====
+>>Criado .gitignore com nome da pasta nodes
+permite resintalar apenas com console "npm i"
+
+>>Criado webpack.config.js

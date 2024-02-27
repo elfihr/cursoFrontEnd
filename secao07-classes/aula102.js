@@ -19,6 +19,10 @@ class Pessoa{
     nomeCompleto(){
         console.log(`${this.nome} ${this.sobrenome}`)
     }
+
+    static soma(x,y){
+        console.log(x+y)
+    }
 }
 
 const p1 = new Pessoa('Lyn','Ferreira')
@@ -39,3 +43,5 @@ Pessoa2.prototype.falar = function(){
 }
 
 const p3 = new Pessoa2('Ike','Kid')
+
+Pessoa.soma(5,10)
