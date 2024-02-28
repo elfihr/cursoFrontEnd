@@ -33,7 +33,7 @@ module.exports = {
     module:{
         //Rules = pra cada elemento e nescessario ir adicionando
         rules:[{
-            //exclude = impede que  o node fique analisandando a pasta
+            //exclude = impede que  o node fique analisando  a pasta
             exclude: /node_modules/,
             //testa o tipo de arquivo no caso os arquivos js usando /.js pegamos arquivos com final .js
             test: /\.js$/,
