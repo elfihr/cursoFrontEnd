@@ -1,12 +1,72 @@
 =====CONSOLE=====
->>Inicio packahe.json
+1.>>Inicio package.json
 npm init -y
 
->>Inico Babel+webpack
+2.>>Inico Babel+webpack
 npm i --save-dev @babel/preset-env @babel/core @babel/cli babel-loader webpack webpack-cli regenerator-runtime core-js@2
+Esse comando cria o node_modules
+nota: verifique na package.jasonse criou todas as dependencias.A falta de uma delas pode ocasionar problemas futuros
 
 ====Pastas====
->>Criado .gitignore com nome da pasta nodes
+3.>>Criado .gitignore com nome da pasta nodes
 permite resintalar apenas com console "npm i"
 
->>Criado webpack.config.js
+4.>>Criado webpack.config.js
+
+5.>>Criado pasta src(source)
+Onde fica o codigo fonte
+
+6.>>Criado arquivo dentro da pasta src index.js
+
+====webpack.config.js====
+7.>> Criado variavel
+const path = require('path')
+
+module.exports = {
+    mode: 'development',
+    entry: './src/index.js',
+    //dirname = caminho absoluto + junto com nome das pastas
+    output: 
+        {path: path.resolve(__dirname, 'public', 'assets', 'js'),
+        filename: 'bundle.js'
+    },
+    module:{
+        //Rules = pra cada elemento e nescessario ir adicionando
+        rules:[{
+            //exclude = impede que  o node fique analisandando a pasta
+            exclude: /node_modules/,
+            //testa o tipo de arquivo no caso os arquivos js usando /.js pegamos arquivos com final .js
+            test: /\.js$/,
+            use: {
+                loader: 'babel-loader',
+                options:{
+                  presets:['@babel/env']  
+                }
+            }
+        }]
+    },
+    //source-map = mapea erro mostrando a linha/arquivo(mostra no console a linha/arquivo)
+    devtool: 'source-map'
+}
+====Pastas====
+8.Criado pasta public/assets/js
+
+====package.json====
+9.>> Linha no script, apagamos o test e acrescentamos o 'gera'(pode ser qualquer nome)
+"gera": "webpack -w" << vai criar o bundle na pasta public/assets/js
+!!Nota o -w é para que as alterações no index.js sejam realizadas em tempo real facilitando testes
+
+=====CONSOLE=====
+10.>>Rodar comando npm run gera
+Ira criar o bundle.js
+
+=====Pasta======
+11.>>Criado index.html dentro da pasta Public
+Colocado a tag do script selecionado o caminho ate o bundle(public>>assets>>js)
+
+====Teste====
+12.>>no index.js na pasta src teste algum comando para verificar se o mesmo vai sair no console do html
+
+====webpack.config.js====
+13.>> ajustado module
+mode: 'development', >> mode: 'production',
