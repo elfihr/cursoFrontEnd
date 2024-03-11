@@ -1,0 +1,20 @@
+-----------------------------------------------------------------------------
+===============================  npm run  ===================================
+-----------------------------------------------------------------------------
+
+1.erro  Error: error:0308010C:digital envelope routines::unsupported
+
+Normalmente ele aponta o campo do erro, mas em duvida atualize node com comando abaixo
+npm install -g n
+n latest
+
+se nao funcionario atualizar manualmente pode funcionar
+-----------------------------------------------------------------------------
+
+2.erro vermelho Error: error:0308010C:digital envelope routines::unsupported
+Em package.json adicionamos constantes abaixo.
+
+const path = require("path");
+const crypto = require("crypto");
+const crypto_orig_createHash = crypto.createHash;
+crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);

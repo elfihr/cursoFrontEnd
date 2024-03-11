@@ -1,0 +1,33 @@
+===npm install express(qualquer dep) -e======
+
+O mesmo vai instalar sem deixar atualizar posteriormente
+sem -e->"express": "^4.18.3"
+com -e->"express": "4.18.3"
+
+======npm update======
+
+Atualiza as dependências
+
+======npm outdate======
+
+-Verifica se tem versao nao atualizada
+
+======npm install express(qualquer dep) --save-dev======
+
+salva em modo desenvolvimento
+
+======npm install express(qualquer dep) --save-prod======
+
+salva em producao
+
+======npm install express(qualquer dep)@2.1.0======
+
+instala a versão requerida
+
+======npm ls --depth=0======
+
+-Lista dependências instaladas
+-Usando apenas npm ls ira mostras dependências que foram instaladas juntos comas principais
+-O Depth pode ser ajustado de acordo com o necessário(ex:0,1,2,..)
+
+
