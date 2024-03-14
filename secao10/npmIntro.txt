@@ -1,3 +1,10 @@
+====INICIAR SERVIDOR====
+node server.js <<server.js nome do arquivo
+npm start
+
+====ParaServer====
+ctrl +C << no terminal
+
 ===npm install express(qualquer dep) -e======
 
 O mesmo vai instalar sem deixar atualizar posteriormente
