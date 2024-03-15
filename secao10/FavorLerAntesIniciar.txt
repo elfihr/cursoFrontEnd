@@ -82,3 +82,7 @@ npm i style-loader css-loader
 ===ATUALIZAR MODIFICAÇÕES===
 Especial. Cada vez que alguma coisa no css ou js for modificada, rodar comando:
 npm run dev (dev sendo o nome que colocamos)
+
+===Outros===
+NPM i ejs = renderizador de HTML
+1_nescessario configurar
