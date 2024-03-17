@@ -18,3 +18,22 @@ const path = require("path");
 const crypto = require("crypto");
 const crypto_orig_createHash = crypto.createHash;
 crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);
+
+-----------------------------------------------------------------------------
+
+3.ao iniciar server erro ocorre
+'nodemon' não é reconhecido como um comando interno ou externo, um programa operável ou um arquivo em lotes.
+
+COMANDOS de ajuste
+
+npm install -g nodemon
+npm install --save-dev nodemon
+npm config get prefix
+
+-----------------------------------------------------------------------------
+
+4.ERROR in Entry module not found: Error: Can't resolve
+ao rodar npm run dev
+
+-Erro na entry point na webpack.config
+-Ajuste o novo caminho onde esta o arquivo main.js
