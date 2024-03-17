@@ -14,11 +14,14 @@ mongoose.connect(process.env.CONNECTIONSTRING)//conexao com .env
 const session = require('express-session')//salva seção na memoria
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash')//mensagens instantaneas
-
 const routes = require('./routes')//importa as rotas pro server
 const path = require('path')//conf path no app.use
-const {middlewareGlobal,outroMidleware} = require('./src/middlewares/middlewares')
+const helmet = require('helmet')//Conf Helmet
+const csrf = require('csurf')
+const {middlewareGlobal,outroMidleware,checkCsrfError,csrfMiddleware} = require('./src/middlewares/middlewares')
 
+
+app.use(helmet())//Ativa o helmet
 app.use(express.urlencoded({extended:true}))
 
 app.use(express.static(path.resolve(__dirname, 'public')))//ajustando path no public
@@ -39,9 +42,14 @@ app.use(flash())//Inicia o flash
 
 app.set('views',path.resolve(__dirname,'src','views'))//setando conf do path
 app.set('view engine','ejs');//setando engine para ejs
-//TesteMiddleWare
+
+app.use(csrf())
+//=====MiddleWare
 app.use(middlewareGlobal)
 app.use(outroMidleware)
+app.use(checkCsrfError)
+app.use(csrfMiddleware)
+
 
 app.use(routes);//Inicia as rotas
 

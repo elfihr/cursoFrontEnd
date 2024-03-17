@@ -8,6 +8,8 @@ HomeModel.create({
     .catch(e => console.loog(e))
 
 exports.paginaInicial = (req,res) => {
+    //req.session.usuario = { Nome:'Marcos',logado:true} teste
+    //console.log(req.session.usuario)  //teste
     res.render('index') //renderiza o index.js na pasta views
     return
 }
