@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(127, 158, 165);
+  --primary-color-darker: rgb(160, 195, 202);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.navBar{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  padding: 1 rem 10%;
+  background-color: red;
+  align-items: center;
+  box-shadow: 0 5px 5px rgba(0,0,0,.25);
+}

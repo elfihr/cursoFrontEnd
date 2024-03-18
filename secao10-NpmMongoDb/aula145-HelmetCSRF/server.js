@@ -22,6 +22,7 @@ const {middlewareGlobal,outroMidleware,checkCsrfError,csrfMiddleware} = require(
 
 
 app.use(helmet())//Ativa o helmet
+app.use(express.json())//Parse de json pra dentro da aplicação
 app.use(express.urlencoded({extended:true}))
 
 app.use(express.static(path.resolve(__dirname, 'public')))//ajustando path no public

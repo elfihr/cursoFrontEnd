@@ -1,0 +1,23 @@
+<%- include('includes/head'); %>
+
+  <header>
+    <nav class="navBar">
+
+      <h3>Agenda</h3>
+
+    </nav>
+
+  </header>
+  <section class="container">
+
+    <h1><%= titulo %> </br></h1>
+
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label>Cliente</label>
+      <input type="text" name="cliente">
+      <button>Botao</button>
+
+    </form>
+
+<%- include('includes/footer'); %>
