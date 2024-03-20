@@ -1,58 +1,40 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-:root {
-  --primary-color: rgb(127, 158, 165);
-  --primary-color-darker: rgb(160, 195, 202);
-}
-
-* {
-  box-sizing: border-box;
-  outline: 0;
-}
-
-body {
+*{
   margin: 0;
   padding: 0;
-  background: var(--primary-color);
-  font-family: 'Open sans', sans-serif;
-  font-size: 1.3em;
-  line-height: 1.5em;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 640px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
+:root{
+  --color-light-050:#f2d8c7;
+  --color-light-100:#efbe9e;
+  --color-light-150:#FDAF7B;
+  --color-light-250:#BE7B72;
+  --color-light-300:#824D74;
+  --color-light-450:#401F71;
 }
 
-form input, form label, form button {
-  display: block;
+.navbar{
+  background: var(--color-light-450);
+  padding: 1rem 10%;
+  position: fixed;
   width: 100%;
-  margin-bottom: 10px;
+  color: var(--color-light-050);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
 }
 
-form input {
-  font-size: 24px;
-  height: 50px;
-  padding: 0 20px;
+.content{
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
-form input:focus {
-  outline: 1px solid var(--primary-color);
-}
+/*=========================ERRO404=========================*/
 
-form button {
-  border: none;
-  background: var(--primary-color);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-form button:hover {
-  background: var(--primary-color-darker);
+.content .erro{
+  font-size: 6rem;
+  text-align: center;
 }

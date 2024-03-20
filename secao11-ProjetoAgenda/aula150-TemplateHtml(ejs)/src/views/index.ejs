@@ -1,23 +1,20 @@
 <%- include('includes/head'); %>
 
-  <header>
-    <nav class="navBar">
+<header class="navbar">
+  <a href="./index.html"><h3>Agenda</h3></a>
+  <h3>Link</h3>
+</header>
 
-      <h3>Agenda</h3>
-
-    </nav>
-
-  </header>
-  <section class="container">
-
-    <h1><%= titulo %> </br></h1>
-
-    <form action="/" method="post">
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <label>Cliente</label>
-      <input type="text" name="cliente">
-      <button>Botao</button>
-
-    </form>
+<main class="content">
+  <h1>Agenda</h1>
+  <p>Seus Contatos estão abaixo</p>
+  <table>
+      <tr>
+          <td>Junin</td>
+          <td>fim</td>
+          <td>33333</td>
+          <td>email.com</td>
+      </tr>
+    </tab>
 
 <%- include('includes/footer'); %>
