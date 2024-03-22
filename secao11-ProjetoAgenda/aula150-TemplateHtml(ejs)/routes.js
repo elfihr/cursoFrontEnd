@@ -1,24 +1,14 @@
 const express = require('express') //carrega o express
 const route = express.Router() 
+const loginController = require('./src/controllers/loginController')
 const homeController = require('./src/controllers/homeController')
-const contatoController = require(`./src/controllers/contatoController`)
 
-//middleware sao os "req" e "res" de requisição e resposta.
-//criado um novo middleware para usar como "next"
-function meuMiddleware(req,res,next) {//nao esqueça next
-    req.session = {nome: 'Serena'}
-    console.log()
-    console.log('Teste MiddleWare');//msg sai no terminal
-    console.log()
-    next()//sempre coleque o next() para o navegador terminar a rquisição
-    //caso contrario ficara carregando e nao iniciara a seguinte
-}
 
-//Devido a roa o mesmo busca get no controller
-route.get('/',homeController.paginaInicial)//acrescentado o middleware de teste
-route.post('/',homeController.trataPost)
+//Devido a rota o mesmo busca get no controller
+route.get('/',homeController.index)//acrescentado o middleware de teste
 
-route.get('/contato',contatoController.paginaInicial)
+//Rotas de Login
+route.get('/login/index', loginController.index)
 
 //importante para expotar modulo a outros jS
 module.exports = route;
